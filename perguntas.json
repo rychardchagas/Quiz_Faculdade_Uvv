@@ -1939,12 +1939,12 @@
       "codigo": null,
       "afirmacoes": null,
       "opcoes": [
-        "Ajax: ii e iii                                    \nJson: i e iv",
-        "Ajax: ii e i0076\nJson: i e iii",
+        "Ajax: ii e iii\nJson: i e iv",
+        "Ajax: ii e iv\nJson: i e iii",
         "Ajax: i e iii\nJson: ii e iv",
         "Ajax: i e iv\nJson: ii e iii"
       ],
-      "resposta": "Ajax: ii e iii                                    \nJson: i e iv"
+      "resposta": "Ajax: ii e iii\nJson: i e iv"
     },
     {
       "titulo": "Definição de AJAX",
