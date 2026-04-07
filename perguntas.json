@@ -2596,13 +2596,13 @@
     }
   ],
   "opcoes": [
-    "I, III e IV somente.",
+    "II, III e IV somente.",
     "III, IV e V somente.",
     "I e V somente.",
     "IV e V somente.",
     "V somente."
   ],
-  "resposta": "III, IV e V somente."
+  "resposta": "II, III e IV somente."
 },
 {
   "titulo": "Composição e Multiplicidade",
