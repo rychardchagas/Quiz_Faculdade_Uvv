@@ -1615,13 +1615,13 @@
   "codigo": "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    for caractere in string:\n        if caractere == '(':\n            pilha.push(caractere)\n        elif caractere == ')':\n            if pilha.isEmpty():\n                return False\n            pilha.pop()\n    return pilha.isEmpty()",
   "afirmacoes": null,
   "opcoes": [
-    "Implementação A",
-    "Implementação B",
-    "Implementação C",
-    "Implementação D",
-    "Implementação E"
+    "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = True\n    posicao = 0\n    while posicao < len(string) and esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = False\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return True\n    else:\n        return False",
+    "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = True\n    posicao = 0\n    while posicao < len(string) and not esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = False\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return True\n    else:\n        return False",
+    "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = False\n    posicao = 0\n    while posicao < len(string) and not esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = False\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return True\n    else:\n        return False",
+    "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = False\n    posicao = 0\n    while posicao < len(string) and not esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = False\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return True\n    else:\n        return False",
+    "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = False\n    posicao = 0\n    while posicao < len(string) and not esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = True\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return False\n    else:\n        return True"
   ],
-  "resposta": "Implementação A"
+  "resposta": "def verifica_balanceamento_parenteses(string):\n    pilha = Stack()\n    esta_balanceado = True\n    posicao = 0\n    while posicao < len(string) and esta_balanceado:\n        caracter_lido = string[posicao]\n        if caracter_lido == '(':\n            pilha.push(caracter_lido)\n        else:\n            if pilha.isEmpty():\n                esta_balanceado = False\n            else:\n                pilha.pop()\n        posicao = posicao + 1\n    if esta_balanceado and pilha.isEmpty():\n        return True\n    else:\n        return False"
 },
 {
   "titulo": "Lista Duplamente Encadeada - Reconstrução de Conteúdo",
