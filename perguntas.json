@@ -1374,6 +1374,92 @@
       "resposta": "Parar a execução e informar que o valor não existe, quando o valor atual for maior que o buscado."
     },
     {
+  "titulo": "Busca em Fila",
+  "descricao": "Analise a alternativa que implementa corretamente a função que verifica se um dado elemento está presente na fila, sem destruir a fila original.",
+  "codigo": null,
+  "imagem": null,
+  "afirmacoes": null,
+  "opcoes": [
+    {
+      "tipo": "codigo",
+      "conteudo": "def existeElemento(fila, elem):\n    if (fila.is_empty()):\n        return False\n    else:\n        copia = copiarFila(fila)\n        while(copia):\n            if(elem == copia.dequeue()):\n                copia = None\n                return True\n        copia = None\n        return False"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def existeElemento(fila, elem):\n    if (fila.is_empty()):\n        return False\n    else:\n        copia = copiarFila(fila)\n        while(copia):\n            if(elem == copia.dequeue()):\n                copia = None\n                return False\n        copia = None\n        return True"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def existeElemento(fila, elem):\n    if (fila.is_empty()):\n        return False\n    else:\n        copia = copiarFila(fila)\n        while(copia):\n            if(elem == copia.dequeue()):\n                copia = None\n                return True\n        copia = None\n        return False"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def existeElemento(fila, elem):\n    if (fila.is_empty()):\n        return True\n    else:\n        copia = copiarFila(fila)\n        while(copia):\n            if(elem == copia.dequeue()):\n                copia = None\n                return True\n        copia = None\n        return False"
+    }
+  ],
+  "resposta": "def existeElemento(fila, elem):\n    if (fila.is_empty()):\n        return False\n    else:\n        copia = copiarFila(fila)\n        while(copia):\n            if(elem == copia.dequeue()):\n                copia = None\n                return False\n        copia = None\n        return True"
+},
+{
+  "titulo": "Fila - Impressão sem Destruir",
+  "descricao": "Sejam as operações de Fila abaixo...\n\nQual código imprime o conteúdo de uma Fila e depois restaura a Fila original?",
+  "imagem": "photoest/est4.jpg",
+  "codigo": null,
+  "afirmacoes": null,
+  "opcoes": [
+    {
+      "tipo": "codigo",
+      "conteudo": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(not q.is_empty()):\n        print(q.first(), end=' ')\n        copia.enqueue(q.dequeue())\n    while(not copia.is_empty()):\n        q.queue(copia.dequeue())\n    copia = None\n    print(']')"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(not q.is_empty()):\n        print(q.first(), end=' ')\n        copia.queue(q.dequeue())\n    while(not copia.is_empty()):\n        q.enqueue(copia.dequeue())\n    copia = None\n    print(']')"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(not q.is_empty()):\n        print(q.first(), end=' ')\n        copia.enqueue(q.dequeue())\n    while(not copia.is_empty()):\n        q.enqueue(copia.dequeue())\n    copia = None\n    print(']')"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(q.is_empty()):\n        print(q.first(), end=' ')\n        copia.enqueue(q.dequeue())\n    while(not copia.is_empty()):\n        q.enqueue(copia.dequeue())\n    copia = None\n    print(']')"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(not q.is_empty()):\n        print(q.first(), end=' ')\n        copia.enqueue(q.dequeue())\n    while(not copia.is_empty()):\n        copia.enqueue(q.dequeue())\n    copia = None\n    print(']')"
+    }
+  ],
+  "resposta": "def printFila(q):\n    copia = Fila()\n    print('[', end='')\n    while(not q.is_empty()):\n        print(q.first(), end=' ')\n        copia.enqueue(q.dequeue())\n    while(not copia.is_empty()):\n        q.enqueue(copia.dequeue())\n    copia = None\n    print(']')"
+},
+{
+  "titulo": "Fila com Vetor Circular - enqueue",
+  "descricao": "Considerando a Fila (ArrayQueue) como um Vetor Circular, conforme o construtor descrito abaixo, determine qual a implementação correta da função def enqueue(elem):",
+  "imagem": null,
+  "codigo": "class ArrayQueue:\n    DEFAULT_CAPACITY = 100\n\n    def __init__(self):\n        self._data = [None] * ArrayQueue.DEFAULT_CAPACITY  # vetor circular\n        self._size = 0  # quantidade de elementos adicionados\n        self._first = -1  # posição do primeiro elemento\n        self._last = -1  # posição do último elemento",
+  "afirmacoes": null,
+  "opcoes": [
+    {
+      "tipo": "codigo",
+      "conteudo": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._last + 1] = e\n        self._size += 1\n        self._first = self._last = self._first + 1\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._last = (self._last + 1) % ArrayQueue.DEFAULT_CAPACITY - 1\n        self._data[self._last] = e\n\n        self._size += 1"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._first + 1] = e\n        self._first = self._last = self._first + 1\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._last = (self._last + 1) % ArrayQueue.DEFAULT_CAPACITY\n        self._data[self._last] = e\n\n    self._size += 1"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._first] = e\n        self._size += 1\n        self._first = self._last = 0\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._last = (self._last + 1) % ArrayQueue.DEFAULT_CAPACITY\n        self._data[self._last] = e\n\n        self._size += 1"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._last + 1] = e\n        self._size += 1\n        self._first = self._last = self._first + 1\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._data[self._last] = e\n\n        self._size += 1"
+    },
+    {
+      "tipo": "codigo",
+      "conteudo": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._last + 1] = e\n        self._size += 1\n        self._first = self._last = self._first + 1\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._last = (self._last + 1) % ArrayQueue.DEFAULT_CAPACITY\n        self._data[self._last] = e\n\n        self._size += 1"
+    }
+  ],
+  "resposta": "def enqueue(self, e):\n    if self.is_empty():\n        self._data[self._last + 1] = e\n        self._size += 1\n        self._first = self._last = self._first + 1\n    elif not ((self._last + 1) % ArrayQueue.DEFAULT_CAPACITY == self._first):\n        self._last = (self._last + 1) % ArrayQueue.DEFAULT_CAPACITY\n        self._data[self._last] = e\n\n        self._size += 1"
+},
+    {
       "titulo": "Estruturas de Dados Implementadas com Lista",
       "descricao": "Em relação às estruturas de dados implementadas usando o tipo lista, analise as assertivas abaixo:",
       "codigo": null,
@@ -1639,7 +1725,7 @@
 {
   "titulo": "Pilha com Array - Operações",
   "descricao": "Considere a implementação de uma pilha utilizando vetor. Determine quais afirmações são corretas após execução das operações.",
-  "codigo": "S = ArrayStack()\nS.push(1)\nS.push(3)\nS.push(4)\nS.pop()\nS.push(2)\nS.push(5)\n\nprint(S.pop())",
+  "codigo": "class ArrayStack:\n    def __init__(self):\n        self._data = [None] * 100\n        self.topo = -1  # pilha vazia\n\n    def is_empty(self):\n        return self.topo == -1\n\n    def push(self, e):\n        if self.topo >= 99:\n            return\n        self.topo += 1\n        self._data[self.topo] = e\n\n    def top(self):\n        if self.is_empty():\n            print('pilha vazia')\n            return None\n        else:\n            return self._data[self.topo]\n\n    def pop(self):\n        if self.is_empty():\n            print('pilha vazia')\n            return None\n        else:\n            elem = self._data[self.topo]\n            self.topo -= 1\n            return elem\n\nif __name__ == '__main__':\n    S = ArrayStack()\n    S.push(2)\n    S.push(3)\n    S.push(4)\n    S.pop()\n    S.push(2)\n    elem = S.pop() + S.pop()\n    S.push(elem)\n    elem = S.pop()\n    print(elem)",
   "afirmacoes": null,
   "opcoes": [
     "I apenas",
@@ -1708,6 +1794,21 @@
       ],
       "resposta": "Possuem infinitos tipos de combinações."
     },
+    {
+  "titulo": "Percurso em Árvore Binária",
+  "descricao": "Dada a árvore a seguir, assinale a alternativa que apresenta o passeio em ordem (in-order) para essa árvore.",
+  "imagem": "photoest/est1.jpg",
+  "codigo": null,
+  "afirmacoes": null,
+  "opcoes": [
+    "1 2 4 3 5 6 7",
+    "1 2 3 4 5 6 7",
+    "4 2 1 7 5 6 3",
+    "4 2 1 5 3 7 6",
+    "7 4 5 6 2 3 1"
+  ],
+  "resposta": "4 2 1 5 3 7 6"
+},
     {
       "titulo": "Características do Modelo MVC",
       "descricao": "É uma característica de um modelo MVC, a afirmativa que se encontra na alternativa:",
