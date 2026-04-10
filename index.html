@@ -1,302 +1,356 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevQuest - Início</title>
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Ícones Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        /* Configuração da fonte e cores personalizadas */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #09090b; /* zinc-950 */
-            color: #e4e4e7; /* zinc-200 */
-        }
-
-        /* Animações personalizadas */
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevQuest</title>
+  <link rel="stylesheet" href="assets/css/cyber.css">
 </head>
-<body class="min-h-screen flex flex-col selection:bg-violet-500 selection:text-white overflow-x-hidden">
+<body>
 
-    <!-- HEADER MINIMALISTA -->
-    <header class="w-full py-6 px-6 flex justify-between items-center border-b border-zinc-800/50 bg-zinc-950/50 backdrop-blur-sm sticky top-0 z-50">
-        <div class="flex items-center gap-3 group cursor-pointer">
-            <div class="p-2 bg-zinc-900 rounded-lg border border-zinc-800 group-hover:border-violet-500/50 transition-colors">
-                <i data-lucide="terminal" class="text-violet-400 w-6 h-6"></i>
-            </div>
-            <div>
-                <h1 class="text-xl font-bold tracking-tight text-zinc-100 group-hover:text-violet-300 transition-colors">
-                    Dev<span class="text-violet-500">Quest</span>
-                </h1>
-                <p class="text-xs text-zinc-500">De alunos para alunos</p>
-            </div>
-        </div>
-        
-        <nav class="hidden md:flex gap-6 text-sm font-medium text-zinc-400">
-            <a href="#" class="hover:text-violet-400 transition-colors">Sobre</a>
-            <a href="#" class="hover:text-violet-400 transition-colors">Contribuir</a>
-            <a href="#" class="hover:text-violet-400 transition-colors">Login</a>
-        </nav>
-    </header>
+  <!-- MATRIX RAIN — watermark background -->
+  <canvas id="game-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.45;"></canvas>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow flex flex-col items-center justify-center px-6 py-20 relative w-full max-w-7xl mx-auto">
-        
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-3xl -z-10 animate-pulse-slow" style="animation-duration: 7s;"></div>
+  <!-- Background glow blobs -->
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
 
-        <div class="text-center mb-16 max-w-2xl z-10">
-            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
-                O que vamos estudar hoje?
-            </h2>
-            <p class="text-lg text-zinc-400">Explore nosso acervo colaborativo. Selecione sua trilha abaixo.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl z-10">
-            
-            <a href="frontend.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-violet-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(139,92,246,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-violet-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">ADS</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="code-2" class="text-violet-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Frontend <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-violet-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">HTML, CSS, React, JS e construção de interfaces.</p>
-                </div>
-            </a>
-
-            <a href="ux.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-fuchsia-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(217,70,239,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-fuchsia-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">ADS</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="palette" class="text-fuchsia-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">UX / UI Design <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-fuchsia-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Heurísticas, Figma e experiência do usuário.</p>
-                </div>
-            </a>
-
-            <a href="engenharia.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-orange-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(249,115,22,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-orange-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">ADS</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="git-branch" class="text-orange-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Engenharia <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-orange-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Ciclo de vida, metodologias ágeis e qualidade.</p>
-                </div>
-            </a>
-
-            <a href="backend.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-red-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(239,68,68,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-red-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">ADS</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="server" class="text-red-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Back End <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-red-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Node.js, APIs, Bancos de Dados e infraestrutura.</p>
-                </div>
-            </a>
-
-            <a href="estruturas.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-yellow-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(234,179,8,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-yellow-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">ADS</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="layers" class="text-yellow-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Estruturas de Dados <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-yellow-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Arrays, Listas e Complexidade de Algoritmos.</p>
-                </div>
-            </a>
-            <a href="infernus.html" class="group relative p-6 rounded-3xl border border-zinc-700 bg-zinc-900/50 hover:bg-zinc-900/90 hover:border-white/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(255,255,255,0.22)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-    <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-700 text-[10px] font-extrabold tracking-widest text-white uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">
-        MIX
-    </span>
-
-    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-
-    <div class="relative z-10">
-        <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-700 mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i data-lucide="flame" class="text-white w-8 h-8"></i>
-        </div>
-
-        <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">
-            Modo Infernus
-            <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-white text-lg">→</span>
-        </h3>
-
-        <p class="text-zinc-400 text-sm leading-relaxed">
-            Engenharia + Backend + Estruturas de Dados, tudo embaralhado. Errou 3, reinicia.
-        </p>
-    </div>
-</a>
-
-            <a href="designthinking.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-lime-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(132,204,22,0.35)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-    
-    <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-lime-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">
-        CC
-    </span>
-
-    <div class="absolute inset-0 bg-gradient-to-br from-lime-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-
-    <div class="relative z-10">
-        <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-            <i data-lucide="lightbulb" class="text-lime-400 w-8 h-8"></i>
-        </div>
-
-        <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">
-            Design Thinking 
-            <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-lime-500 text-lg">→</span>
-        </h3>
-
-        <p class="text-zinc-400 text-sm leading-relaxed">
-            Empatia, Ideação, Prototipagem e Inovação.
-        </p>
-    </div>
-</a>
-
-            <a href="logica.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-blue-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-blue-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">CC</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="binary" class="text-blue-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Lógica <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-blue-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Algoritmos e pensamento computacional.</p>
-                </div>
-            </a>
-
-            <a href="estruturascc.html" class="group relative p-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-emerald-500/50 hover:-translate-y-2 hover:shadow-[0_0_50px_-12px_rgba(16,185,129,0.3)] transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between min-h-[220px]">
-                <span class="absolute -top-2 -right-2 bg-zinc-950 px-3 py-1 rounded-full border border-zinc-800 text-[10px] font-extrabold tracking-widest text-emerald-400 uppercase z-20 shadow-2xl group-hover:scale-110 transition-transform duration-500">CC</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 pointer-events-none"></div>
-                <div class="relative z-10">
-                    <div class="p-3 w-fit bg-zinc-950 rounded-2xl border border-zinc-800 mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="layers" class="text-emerald-400 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-100 mb-2 flex items-center gap-2">Estruturas CC <span class="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-emerald-500 text-lg">→</span></h3>
-                    <p class="text-zinc-400 text-sm leading-relaxed">Pilhas, Filas e Complexidade Big O.</p>
-                </div>
-            </a>
-
-        </div>
-    </main>
-
-    <!-- FOOTER -->
-    <footer className="w-full py-8 border-t border-zinc-800/50 bg-zinc-950 relative z-10">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 py-8 border-t border-zinc-800/50 bg-zinc-950">
-            <div class="text-center md:text-left">
-                <p class="text-zinc-500 text-sm flex items-center justify-center md:justify-start gap-1">
-                    Feito com <i data-lucide="coffee" class="text-amber-700 w-3 h-3"></i> e <i data-lucide="bot" class="w-3 h-3 stroke-[#ff0000]"></i>
-</i>
-</i> por Vinicius
-                </p>
-                <p class="text-zinc-600 text-xs mt-1">© 2025 Acervo de Questões. Open Source.</p>
-            </div>
-            
-            <div class="flex gap-4">
-                <a href="#" class="p-2 text-zinc-500 hover:text-violet-400 hover:bg-violet-500/10 rounded-full transition-colors">
-                    <i data-lucide="github" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="p-2 text-zinc-500 hover:text-blue-400 hover:bg-blue-500/10 rounded-full transition-colors">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- AUDIOS DO GATO -->
-    <audio id="meow1" src="audios/miado1.mp3"></audio>
-    <audio id="meow2" src="audios/miado2.mp3"></audio>
-    <audio id="meow3" src="audios/miado3.mp3"></audio>
-    <audio id="meow4" src="audios/miado4.mp3"></audio>
-    <audio id="meow5" src="audios/miado5.mp3"></audio>
-
-    <!-- GATO INTERATIVO -->
-    <div class="fixed bottom-4 right-4 z-50 cursor-pointer group" onclick="handleCatClick()" title="Miau! Ass: Vinicius">
-        
-        <!-- Balão de fala -->
-        <div id="cat-bubble" class="absolute -top-12 -left-8 bg-white text-zinc-900 text-xs font-bold px-3 py-1 rounded-xl rounded-br-none transform transition-all duration-300 shadow-lg opacity-0 scale-90 translate-y-2 pointer-events-none">
-            Miau! 🐾
-        </div>
-
-        <!-- Gato SVG -->
-        <svg width="80" height="80" viewBox="0 0 100 100" id="cat-svg" class="transform transition-transform duration-500 group-hover:-translate-y-2">
-            <path d="M30 80 Q30 40 60 40 Q90 40 90 80 L90 100 L30 100 Z" fill="#18181b" stroke="#27272a" stroke-width="2" />
-            <circle cx="60" cy="45" r="25" fill="#18181b" stroke="#27272a" stroke-width="2" />
-            <path d="M40 30 L35 10 L55 25 Z" fill="#18181b" stroke="#27272a" stroke-width="2" />
-            <path d="M80 30 L85 10 L65 25 Z" fill="#18181b" stroke="#27272a" stroke-width="2" />
-            <circle cx="50" cy="40" r="3" fill="#a78bfa" class="animate-pulse" />
-            <circle cx="70" cy="40" r="3" fill="#a78bfa" class="animate-pulse" />
-            <path d="M58 50 L62 50 L60 53 Z" fill="#e4e4e7" />
-            <line x1="45" y1="52" x2="25" y2="50" stroke="#52525b" stroke-width="1" />
-            <line x1="45" y1="55" x2="25" y2="58" stroke="#52525b" stroke-width="1" />
-            <line x1="75" y1="52" x2="95" y2="50" stroke="#52525b" stroke-width="1" />
-            <line x1="75" y1="55" x2="95" y2="58" stroke="#52525b" stroke-width="1" />
+  <!-- NAVBAR -->
+  <nav class="cyber-nav">
+    <div class="cyber-logo">
+      <div class="cyber-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
         </svg>
+      </div>
+      <div>
+        <div class="cyber-logo-text">Dev<span>Quest</span></div>
+        <div class="cyber-logo-sub">De alunos para alunos</div>
+      </div>
+    </div>
+    <ul class="cyber-nav-links">
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contribuir</a></li>
+      <li><a href="https://github.com/ViniciusPaiva21/Quiz_Interativo" target="_blank">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main-container">
+
+    <!-- HERO -->
+    <div class="cyber-hero">
+      <span class="cyber-hero-label">// sistema de estudos v2.0</span>
+      <h2 class="cyber-hero-title">
+        O que vamos estudar<br>
+        <span class="glitch-text">hoje?</span>
+      </h2>
+      <p class="cyber-hero-subtitle">Selecione seu módulo e inicie o treinamento.</p>
     </div>
 
-    <script>
-        // Inicializa os ícones Lucide
-        lucide.createIcons();
+    <!-- CATEGORY GRID -->
+    <div class="cyber-grid">
 
-        // Função para tocar miados aleatórios
-        function playRandomMeow() {
-            const sounds = [
-                document.getElementById('meow1'),
-                document.getElementById('meow2'),
-                document.getElementById('meow3'),
-                document.getElementById('meow4'),
-                document.getElementById('meow5')
-            ];
+      <!-- Frontend -->
+      <a href="pages/frontend.html" class="cyber-card"
+         style="--card-accent:#bf00ff;--card-accent-rgb:191,0,255;">
+        <div class="card-scan"></div>
+        <span class="card-badge">ADS</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="card-title">Frontend <span class="card-arrow">→</span></div>
+          <p class="card-desc">HTML, CSS, React, JS e construção de interfaces.</p>
+        </div>
+      </a>
 
-            const chosen = sounds[Math.floor(Math.random() * sounds.length)];
+      <!-- UX/UI -->
+      <a href="pages/ux.html" class="cyber-card"
+         style="--card-accent:#ff00ff;--card-accent-rgb:255,0,255;">
+        <div class="card-scan"></div>
+        <span class="card-badge">ADS</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+            </svg>
+          </div>
+          <div class="card-title">UX / UI Design <span class="card-arrow">→</span></div>
+          <p class="card-desc">Heurísticas, Figma e experiência do usuário.</p>
+        </div>
+      </a>
 
-            // Reseta caso já tenha tocado antes
-            chosen.currentTime = 0;
-            chosen.play();
+      <!-- Engenharia -->
+      <a href="pages/engenharia.html" class="cyber-card"
+         style="--card-accent:#ff8800;--card-accent-rgb:255,136,0;">
+        <div class="card-scan"></div>
+        <span class="card-badge">ADS</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+              <path d="M18 9a9 9 0 01-9 9"/>
+            </svg>
+          </div>
+          <div class="card-title">Engenharia <span class="card-arrow">→</span></div>
+          <p class="card-desc">Ciclo de vida, metodologias ágeis e qualidade.</p>
+        </div>
+      </a>
+
+      <!-- Backend -->
+      <a href="pages/backend.html" class="cyber-card"
+         style="--card-accent:#ff003c;--card-accent-rgb:255,0,60;">
+        <div class="card-scan"></div>
+        <span class="card-badge">ADS</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+          </div>
+          <div class="card-title">Back End <span class="card-arrow">→</span></div>
+          <p class="card-desc">Node.js, APIs, bancos de dados e infraestrutura.</p>
+        </div>
+      </a>
+
+      <!-- Estruturas ADS -->
+      <a href="pages/estruturas.html" class="cyber-card"
+         style="--card-accent:#f5ff00;--card-accent-rgb:245,255,0;">
+        <div class="card-scan"></div>
+        <span class="card-badge">ADS</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <div class="card-title">Estruturas de Dados <span class="card-arrow">→</span></div>
+          <p class="card-desc">Arrays, Listas e Complexidade de Algoritmos.</p>
+        </div>
+      </a>
+
+      <!-- Modo Infernus -->
+      <a href="pages/infernus.html" class="cyber-card"
+         style="--card-accent:#e8e8ff;--card-accent-rgb:232,232,255;">
+        <div class="card-scan"></div>
+        <span class="card-badge">MIX</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>
+            </svg>
+          </div>
+          <div class="card-title">Modo Infernus <span class="card-arrow">→</span></div>
+          <p class="card-desc">Engenharia + Backend + Estruturas. Errou 3, reinicia.</p>
+        </div>
+      </a>
+
+      <!-- Design Thinking -->
+      <a href="pages/designthinking.html" class="cyber-card"
+         style="--card-accent:#00ff41;--card-accent-rgb:0,255,65;">
+        <div class="card-scan"></div>
+        <span class="card-badge">CC</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+              <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+            </svg>
+          </div>
+          <div class="card-title">Design Thinking <span class="card-arrow">→</span></div>
+          <p class="card-desc">Empatia, Ideação, Prototipagem e Inovação.</p>
+        </div>
+      </a>
+
+      <!-- Lógica -->
+      <a href="pages/logica.html" class="cyber-card"
+         style="--card-accent:#0099ff;--card-accent-rgb:0,153,255;">
+        <div class="card-scan"></div>
+        <span class="card-badge">CC</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="1" width="4" height="6" rx="1"/><rect x="16" y="1" width="4" height="6" rx="1"/>
+              <rect x="10" y="9" width="4" height="6" rx="1"/><rect x="4" y="17" width="4" height="6" rx="1"/>
+              <rect x="16" y="17" width="4" height="6" rx="1"/>
+              <line x1="6" y1="7" x2="12" y2="9"/><line x1="18" y1="7" x2="12" y2="9"/>
+              <line x1="12" y1="15" x2="6" y2="17"/><line x1="12" y1="15" x2="18" y2="17"/>
+            </svg>
+          </div>
+          <div class="card-title">Lógica <span class="card-arrow">→</span></div>
+          <p class="card-desc">Algoritmos e pensamento computacional.</p>
+        </div>
+      </a>
+
+      <!-- Estruturas CC -->
+      <a href="pages/estruturascc.html" class="cyber-card"
+         style="--card-accent:#00ffcc;--card-accent-rgb:0,255,204;">
+        <div class="card-scan"></div>
+        <span class="card-badge">CC</span>
+        <div>
+          <div class="card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <div class="card-title">Estruturas CC <span class="card-arrow">→</span></div>
+          <p class="card-desc">Pilhas, Filas e Complexidade Big O.</p>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="cyber-footer">
+    <span class="footer-text">© 2025 DevQuest // Open Source // Feito por Vinicius</span>
+    <div class="footer-links">
+      <a href="https://github.com/ViniciusPaiva21/Quiz_Interativo" target="_blank" class="footer-link" title="GitHub">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- AUDIO CAT -->
+  <audio id="meow1" src="assets/audio/miado1.mp3" preload="none"></audio>
+  <audio id="meow2" src="assets/audio/miado2.mp3" preload="none"></audio>
+  <audio id="meow3" src="assets/audio/miado3.mp3" preload="none"></audio>
+  <audio id="meow4" src="assets/audio/miado4.mp3" preload="none"></audio>
+  <audio id="meow5" src="assets/audio/miado5.mp3" preload="none"></audio>
+
+  <!-- MASCOT -->
+  <div class="mascot-wrap" onclick="handleCatClick()" title="Miau!">
+    <div id="cat-bubble" class="mascot-bubble">MIAU://</div>
+    <svg width="72" height="72" viewBox="0 0 100 100" id="cat-svg" style="transition:transform 0.4s ease;display:block;">
+      <path d="M30 80 Q30 40 60 40 Q90 40 90 80 L90 100 L30 100 Z" fill="#0a0a1f" stroke="#00f0ff" stroke-width="1.5"/>
+      <circle cx="60" cy="45" r="25" fill="#0a0a1f" stroke="#00f0ff" stroke-width="1.5"/>
+      <path d="M40 30 L35 10 L55 25 Z" fill="#0a0a1f" stroke="#00f0ff" stroke-width="1.5"/>
+      <path d="M80 30 L85 10 L65 25 Z" fill="#0a0a1f" stroke="#00f0ff" stroke-width="1.5"/>
+      <circle cx="50" cy="40" r="3" fill="#00f0ff"/>
+      <circle cx="70" cy="40" r="3" fill="#00f0ff"/>
+      <path d="M58 50 L62 50 L60 53 Z" fill="#e0e0ff"/>
+      <line x1="45" y1="52" x2="25" y2="50" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="45" y1="55" x2="25" y2="58" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="75" y1="52" x2="95" y2="50" stroke="#00f0ff" stroke-width="1"/>
+      <line x1="75" y1="55" x2="95" y2="58" stroke="#00f0ff" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <script src="assets/js/mascot.js"></script>
+
+  <!-- ============================================================
+       MATRIX RAIN — passive cyberpunk background
+       ============================================================ -->
+  <script>
+  (function () {
+    'use strict';
+
+    const canvas = document.getElementById('game-canvas');
+    const ctx    = canvas.getContext('2d');
+
+    // ── Charset: katakana + code symbols + hex + latin ──
+    const CHARS =
+      'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン' +
+      '0123456789ABCDEF{}[]<>/\\|=+-*&%$#@!?~^' +
+      'abcdefghijklmnopqrstuvwxyz';
+
+    // Column colors: mostly cyan, occasional purple or green
+    const COL_PALETTES = [
+      '#00f0ff', '#00f0ff', '#00f0ff', '#00f0ff', '#00f0ff',
+      '#bf00ff', '#00ff41',
+    ];
+
+    const FS = 14;         // font size / column width
+    let W, H, cols;
+    let drops = [];        // y position (in rows) per column
+    let speeds = [];       // rows per frame per column (float)
+    let palette = [];      // color per column
+    let accum = [];        // fractional accumulator per column
+
+    function init() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      cols   = Math.floor(W / FS);
+      drops  = [];
+      speeds = [];
+      palette = [];
+      accum  = [];
+      for (let i = 0; i < cols; i++) {
+        // stagger starting positions so it doesn't all start at top at once
+        drops[i]  = -Math.floor(Math.random() * (H / FS));
+        speeds[i] =  0.08 + Math.random() * 0.18;  // 0.08–0.26 rows/frame
+        accum[i]  = 0;
+        palette[i] = COL_PALETTES[Math.floor(Math.random() * COL_PALETTES.length)];
+      }
+      // Fill canvas black so first fade-rect starts correctly
+      ctx.fillStyle = '#020208';
+      ctx.fillRect(0, 0, W, H);
+    }
+    init();
+    window.addEventListener('resize', init);
+
+    ctx.font = `${FS}px 'Share Tech Mono', monospace`;
+
+    function tick() {
+      // Fade previous frame — controls trail length
+      ctx.fillStyle = 'rgba(2, 2, 8, 0.22)';
+      ctx.fillRect(0, 0, W, H);
+
+      for (let i = 0; i < cols; i++) {
+        accum[i] += speeds[i];
+        if (accum[i] < 1) continue;
+        accum[i] -= 1;
+
+        const row = drops[i];
+        if (row >= 0) {
+          const x = i * FS;
+          const y = row * FS;
+          const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+          const col = palette[i];
+
+          // Bright white-hot leading character
+          ctx.shadowBlur  = 12;
+          ctx.shadowColor = col;
+          ctx.fillStyle   = '#ffffff';
+          ctx.fillText(ch, x, y);
+          ctx.shadowBlur  = 0;
+
+          // Colour echo one row behind (gives a sharp secondary glow)
+          if (row > 0) {
+            ctx.fillStyle = col;
+            ctx.fillText(CHARS[Math.floor(Math.random() * CHARS.length)], x, y - FS);
+          }
         }
 
-        function handleCatClick() {
-            const bubble = document.getElementById('cat-bubble');
-            const catSvg = document.getElementById('cat-svg');
+        drops[i]++;
 
-            // TOCA O MIAU
-            playRandomMeow();
-
-            // Mostra o balão
-            bubble.classList.remove('opacity-0', 'scale-90', 'translate-y-2');
-            bubble.classList.add('opacity-100', 'scale-100', 'translate-y-0');
-            
-            // Pulo do gato
-            catSvg.classList.add('translate-y-2');
-
-            // Esconde depois de 1 segundo
-            setTimeout(() => {
-                bubble.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
-                bubble.classList.add('opacity-0', 'scale-90', 'translate-y-2');
-                catSvg.classList.remove('translate-y-2');
-            }, 1000);
+        // Reset when column has scrolled fully off screen, random pause
+        if (drops[i] * FS > H + FS * 6 && Math.random() < 0.02) {
+          drops[i]  = -Math.floor(Math.random() * 20);
+          // occasionally swap palette color on reset for variety
+          if (Math.random() < 0.25) {
+            palette[i] = COL_PALETTES[Math.floor(Math.random() * COL_PALETTES.length)];
+          }
         }
-    </script>
+      }
+
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+  </script>
 
 </body>
 </html>

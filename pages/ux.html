@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevQuest — UX / UI Design</title>
+  <link rel="stylesheet" href="../assets/css/cyber.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+  <div class="glow-blob glow-blob-1" style="background:var(--neon-magenta);"></div>
+  <div class="glow-blob glow-blob-2" style="background:var(--neon-purple);"></div>
+
+  <nav class="cyber-nav">
+    <a href="../index.html" class="cyber-logo">
+      <div class="cyber-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+        </svg>
+      </div>
+      <div>
+        <div class="cyber-logo-text">Dev<span>Quest</span></div>
+        <div class="cyber-logo-sub">De alunos para alunos</div>
+      </div>
+    </a>
+    <ul class="cyber-nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="frontend.html">Frontend</a></li>
+    </ul>
+  </nav>
+
+  <main class="quiz-layout">
+    <div class="quiz-header-section">
+      <span class="quiz-subject-label">// ADS — UX / UI Design</span>
+      <h1 class="quiz-title">Quiz UX / UI</h1>
+      <p class="quiz-subtitle">Heurísticas, Figma e experiência do usuário.</p>
+    </div>
+
+    <div id="loading" class="loading-text">Carregando questões</div>
+
+    <div id="quiz-container" class="hidden" style="width:100%;max-width:760px;">
+      <div id="question-area" class="quiz-box"></div>
+      <button id="next-btn" class="next-btn hidden" onclick="nextQuestion()">
+        Próxima Questão //&gt;
+      </button>
+    </div>
+
+    <div id="final-screen" class="final-screen hidden">
+      <div class="final-title">MISSÃO COMPLETA</div>
+      <div class="final-score">Você acertou <span id="score-text"></span> questões</div>
+      <div class="final-actions">
+        <button onclick="location.reload()" class="btn-primary">Jogar Novamente</button>
+        <a href="../index.html" class="btn-secondary">Voltar ao Início</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="cyber-footer">
+    <span class="footer-text">© 2025 DevQuest // Feito por Vinicius</span>
+    <div class="footer-links">
+      <a href="../index.html" class="footer-link" title="Início">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <div class="mascot-wrap" onclick="handleCatClick()" title="Miau!">
+    <div id="cat-bubble" class="mascot-bubble">MIAU://</div>
+    <svg width="68" height="68" viewBox="0 0 100 100" id="cat-svg" style="transition:transform 0.4s ease;display:block;">
+      <path d="M30 80 Q30 40 60 40 Q90 40 90 80 L90 100 L30 100 Z" fill="#0a0a1f" stroke="#ff00ff" stroke-width="1.5"/>
+      <circle cx="60" cy="45" r="25" fill="#0a0a1f" stroke="#ff00ff" stroke-width="1.5"/>
+      <path d="M40 30 L35 10 L55 25 Z" fill="#0a0a1f" stroke="#ff00ff" stroke-width="1.5"/>
+      <path d="M80 30 L85 10 L65 25 Z" fill="#0a0a1f" stroke="#ff00ff" stroke-width="1.5"/>
+      <circle cx="50" cy="40" r="3" fill="#ff00ff"/>
+      <circle cx="70" cy="40" r="3" fill="#ff00ff"/>
+      <path d="M58 50 L62 50 L60 53 Z" fill="#e0e0ff"/>
+      <line x1="45" y1="52" x2="25" y2="50" stroke="#ff00ff" stroke-width="1"/>
+      <line x1="45" y1="55" x2="25" y2="58" stroke="#ff00ff" stroke-width="1"/>
+      <line x1="75" y1="52" x2="95" y2="50" stroke="#ff00ff" stroke-width="1"/>
+      <line x1="75" y1="55" x2="95" y2="58" stroke="#ff00ff" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <audio id="meow1" src="../assets/audio/miado1.mp3" preload="none"></audio>
+  <audio id="meow2" src="../assets/audio/miado2.mp3" preload="none"></audio>
+  <audio id="meow3" src="../assets/audio/miado3.mp3" preload="none"></audio>
+  <audio id="meow4" src="../assets/audio/miado4.mp3" preload="none"></audio>
+  <audio id="meow5" src="../assets/audio/miado5.mp3" preload="none"></audio>
+
+  <script>
+    window.QUIZ_CONFIG = {
+      subject:   'ux',
+      accent:    '#ff00ff',
+      accentRgb: '255, 0, 255',
+      jsonPath:  '../assets/data/perguntas.json'
+    };
+  </script>
+  <script src="../assets/js/quiz-engine.js"></script>
+  <script src="../assets/js/mascot.js"></script>
+</body>
+</html>
