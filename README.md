@@ -160,3 +160,5 @@ Para usar no frontend, troque o `jsonPath` no `QUIZ_CONFIG` pela URL da API.
 ---
 
 Feito por **Vinicius Paiva** — [GitHub](https://github.com/ViniciusPaiva21/Quiz_Interativo)
+
+Colaboração **Moreira** - https://github.com/rychardchagas
